@@ -11,6 +11,11 @@ export class ServersComponent implements OnInit {
   serverCreationStatus = 'No server was created!';
   serverName = 'serverName';
   userName = "userName";
+  serverCreated = false;
+  servers = ['Testserver', 'Testserver 2'];
+  showParagraph: boolean = false;
+  timesButtonClicked: number = 0;
+  buttonClickedArray = [];
 
   constructor() { 
     setTimeout(() => {
@@ -22,6 +27,8 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer() {
+    this.serverCreated = true;
+    this.servers.push(this.serverName);
     this.serverCreationStatus = `Server was created! Name is ${this.serverName}.`;
   }
 
@@ -31,6 +38,12 @@ export class ServersComponent implements OnInit {
 
   emptyString() {
     this.userName = '';
+  }
+
+  onButtonClick() {
+    this.showParagraph = !this.showParagraph;
+    this.timesButtonClicked += 1;
+    this.buttonClickedArray.push(new Date());
   }
 
 }

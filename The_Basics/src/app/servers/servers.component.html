@@ -1,0 +1,55 @@
+<!-- <input 
+    type="text"
+    class="form-control"
+    (input)="onUpdateServerName($event)"
+
+> -->
+<input 
+    type="text"
+    class="form-control"
+    [(ngModel)]="serverName"
+>
+<!-- <input 
+    type="text" 
+    class="form-control"
+    [(ngModel)]="userName"
+> -->
+
+<p>{{ serverName }}</p>
+<!-- <p>{{ userName }}</p> -->
+<button 
+    class="btn btn-primary"
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()"
+>
+    Add Server
+</button>
+<!-- <button 
+    class="btn btn-primary"
+    [disabled]="!userName"
+    (click)="emptyString()"
+>
+Empty String 
+</button> -->
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<hr>
+<button
+    (click)="onButtonClick()"
+>
+    Display details
+</button
+>
+<p *ngIf="showParagraph"> 
+    Secret password = tuna
+</p>
+<p 
+    *ngFor="let item of buttonClickedArray; let i = index"
+    [ngStyle]="i > 4 && {backgroundColor: 'blue'}"
+    [ngClass]="{white: i > 4}"
+>
+    Button clicked {{ item }} times.
+</p>
+<p *ngIf="serverCreated">
+Server was created, server name is {{ serverName }}.
+</p>
+<app-server *ngFor="let server of servers"></app-server>
