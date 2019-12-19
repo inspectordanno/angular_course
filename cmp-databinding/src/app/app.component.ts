@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -28,5 +28,10 @@ export class AppComponent {
       content: bluePrintData.serverContent
     });
   }
+
+  onDestroyFirst() {
+    this.serverElements.splice(0, 1);
+  }
+
   
 }
