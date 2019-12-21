@@ -16,7 +16,7 @@ export class AccountsService {
           name: 'Hidden Account',
           status: 'unknown'
         }
-    ];
+    ]; 
     statusUpdated = new EventEmitter<string>();
 
     constructor(private loggingService: LoggingService){}
