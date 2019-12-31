@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { shoppingListReducer } from './shopping-list/store/shopping-list.reducer';
 
 import { AppComponent } from './app.component';
@@ -41,6 +42,7 @@ import { RecipeService } from './recipes/recipe.service';
     HttpClientModule,
     AppRoutingModule,
     StoreModule.forRoot({shoppingList: shoppingListReducer}),
+    StoreDevtoolsModule.instrument()
   ],
   providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent]
